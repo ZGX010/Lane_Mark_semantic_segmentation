@@ -1,4 +1,8 @@
 # Lane_mark_semantic-segmentation
+## 项目功能：
+## DeeplabV3 model：
+## 处理训练数据为ＴＦＲecord格式
+## 训练模型
 ```python
 CUDA_VISIBLE_DEVICES=0 \
 python deeplab/train.py \
@@ -25,6 +29,7 @@ python deeplab/train.py \
 --train_logdir='/home/zgx010/TensorflowModels/models/research/deeplab/datasets/apollo/exp/train_on_train_set/train_200000' \
 --dataset_dir='/home/zgx010/TensorflowModels/models/research/deeplab/datasets/apollo/tfrecord'
 ```
+## 训练结果可视化
 ```python
 CUDA_VISIBLE_DEVICES=1 \
 python deeplab/vis.py \
@@ -44,6 +49,8 @@ python deeplab/vis.py \
 --vis_logdir='/home/zgx010/TensorflowModels/models/research/deeplab/datasets/apollo/exp/train_on_train_set/vis_train_200000' \
 --dataset_dir='/home/zgx010/TensorflowModels/models/research/deeplab/datasets/apollo/tfrecord'
 ```
+
+## 评估模型
 ```python
 CUDA_VISIBLE_DEVICES=0 \
 python deeplab/eval.py \
@@ -62,6 +69,7 @@ python deeplab/eval.py \
 --eval_logdir='/home/zgx010/TensorflowModels/models/research/deeplab/datasets/apollo/exp/train_on_train_set/eval_110000' \
 --dataset_dir='/home/zgx010/TensorflowModels/models/research/deeplab/datasets/apollo/tfrecord'
 ```
+## 导出模型
 ```python
 python deeplab/export_model.py \
   --logtostderr \
