@@ -1,4 +1,5 @@
 # Lane_mark_semantic-segmentation
+```python
 CUDA_VISIBLE_DEVICES=0 \
 python deeplab/train.py \
 --logtostderr \
@@ -23,7 +24,8 @@ python deeplab/train.py \
 --tf_initial_checkpoint='/home/zgx010/TensorflowModels/models/research/deeplab/backbone/deeplabv3_cityscapes_train/model.ckpt' \
 --train_logdir='/home/zgx010/TensorflowModels/models/research/deeplab/datasets/apollo/exp/train_on_train_set/train_200000' \
 --dataset_dir='/home/zgx010/TensorflowModels/models/research/deeplab/datasets/apollo/tfrecord'
-
+```
+```python
 CUDA_VISIBLE_DEVICES=1 \
 python deeplab/vis.py \
 --logtostderr \
@@ -41,7 +43,8 @@ python deeplab/vis.py \
 --checkpoint_dir='/home/zgx010/TensorflowModels/models/research/deeplab/datasets/apollo/exp/train_on_train_set/train_200000' \
 --vis_logdir='/home/zgx010/TensorflowModels/models/research/deeplab/datasets/apollo/exp/train_on_train_set/vis_train_200000' \
 --dataset_dir='/home/zgx010/TensorflowModels/models/research/deeplab/datasets/apollo/tfrecord'
-
+```
+```python
 CUDA_VISIBLE_DEVICES=0 \
 python deeplab/eval.py \
 --logtostderr \
@@ -58,7 +61,8 @@ python deeplab/eval.py \
 --checkpoint_dir='/home/zgx010/TensorflowModels/models/research/deeplab/datasets/apollo/exp/train_on_train_set/train_110000' \
 --eval_logdir='/home/zgx010/TensorflowModels/models/research/deeplab/datasets/apollo/exp/train_on_train_set/eval_110000' \
 --dataset_dir='/home/zgx010/TensorflowModels/models/research/deeplab/datasets/apollo/tfrecord'
-
+```
+```python
 python deeplab/export_model.py \
   --logtostderr \
   --model_variant="xception_65" \
@@ -71,3 +75,4 @@ python deeplab/export_model.py \
   --crop_size= \
   --checkpoint_path='/home/zgx010/TensorflowModels/models/research/deeplab/datasets/apollo/exp/train_on_train_set/train_110000' \
   --export_dir='/home/zgx010/TensorflowModels/models/research/deeplab/datasets/apollo/exp/train_on_train_set/export_train_110000' \
+```
