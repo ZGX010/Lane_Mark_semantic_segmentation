@@ -2,11 +2,14 @@
 ## 项目功能：
 <div align=center><img width="400" height="240" src="https://github.com/ZGX010/Lane_Mark_semantic_segmentation/blob/master/doc/lane_mark.gif"/></div>
 <br>
+
 ## DeeplabV3 model：
 <br>
-## 处理训练数据为ＴＦＲecord格式
+处理训练数据为ＴＦＲecord格式
 <br>
-## 训练模型
+训练模型
+<br>
+
 ```python
 CUDA_VISIBLE_DEVICES=0 \
 python deeplab/train.py \
