@@ -1,6 +1,6 @@
 # Lane_mark_semantic-segmentation
 ## 项目功能：
-<div align=center><img width="450" height="240" src="https://github.com/ZGX010/Lane_Mark_semantic_segmentation/blob/master/doc/lane_mark.gif"/></div>
+<div align=center><img width="400" height="240" src="https://github.com/ZGX010/Lane_Mark_semantic_segmentation/blob/master/doc/lane_mark.gif"/></div>
 <br>
 ## DeeplabV3 model：
 <br>
