@@ -1,15 +1,12 @@
 # Lane_mark_semantic-segmentation
 <br>
-
 ## １ 项目功能：
 本项目是deeplab模型在百度apollo路面标线数据上训练来的．解决了样本训练样本不均衡以及训练数据标注结果无法直接使用的问题．在本项目中我提供了一个支持多线程的彩色标注转灰度图的脚本，并提供了一个将可视化结果合并为视频文件到的脚本．同时还提供已经打包好的ＴＦＲecord数据以及为解决样本不均衡问题设置的类别权重作为参考．
 下面的ＧＩＦ为网络预测结果
 <div align=center><img width="426" height="240" src="https://github.com/ZGX010/Lane_Mark_semantic_segmentation/blob/master/doc/lane_mark.gif"/></div>
 <br>
-<br>
 
 ## 2 DeeplabV3 model and apollo-lane-mark-dataset
-<br>
 <br>
 
 ## 3 运行环境
@@ -26,7 +23,6 @@ pip install python-pil python-numpy jupyter matplotlib
 pip install opencv3
 ```
 <br>
-<br>
 
 ## 4 检测环境
 在research文件夹下运行检测命令并重启
@@ -38,7 +34,6 @@ export PYTHONPATH=$PYTHONPATH:`pwd`:`pwd`/slim
 ```python
 python deeplab/model_test.py
 ```
-<br>
 <br>
 
 ## 5 处理训练数据为ＴＦＲecord格式
@@ -52,18 +47,15 @@ python deeplab/model_test.py
 # from /datasets/apollo/lane_segmentation/
 python color2TrainIdLabelImgs.py
 ```
-<br>
-
 color2TrainIdLabelImgs.py中使用了多线程默认线程数是10，你可以在脚本中修改线程数以适用于你的计算机．脚本运行结束后会在Ｌabeimg文件夹下生成训练用的标注数据．
 <br>
 
-### 5.2 将百度数据打包为ＴＦＲecord
+### 5.2 将apollo数据打包为ＴＦＲecord
 这个脚本修改自build_cityscapes.py文件,它将从colorimg/labelimg文件夹中读取数据并打包成ＴＦＲecord．需要注意的是只有经过上一步转换后的图像才能进行打包不然会出现错误．
 ```python
 # from /datasets/apollo/
 python build_apollo_data.py
 ```
-<br>
 <br>
 
 ## 6 训练模型
@@ -71,9 +63,30 @@ python build_apollo_data.py
 cityspaecs数据集虽然没有标线这个类别，但是它却是在城市场景中训练的模型，与本项目有一定的交集，因此我使用了它提供的预训练模型进行训练，并在这个基础上得到了较好的结果．
 download.tensorflow.org/models/deeplabv3_cityscapes_train_2018_02_06.tar.gz
 ### 6.2 下载本项目提供的预训练模型
-如果你的时间比较紧张，或者你需要在较短的时间内看到结果，你可以使用
+如果你的时间比较紧张，或者你需要在较短的时间内看到结果，你可以使用我提供的预训练模型，直接在这个基础上进行训练，相信这样模型会很快收敛．
 <br>
 ### 6.3 非均衡样本的设置
+在'/utils/train_utils.py'脚本中对loss的计算进行了定义，你可以根据自己的需要对权重进行编辑，将比较重要的对象设置较高权重．　<br>
+如果你希望能够通过计算得到一个确切的数字，那么你可以参考E-net中的计算方法，但是这种方法仅仅只考虑了数据的分布并没考虑对象间的差异． <br>
+```python
+scaled_labels = tf.reshape(scaled_labels, shape=[-1])
+    loss_weight0 = 1.5
+    loss_weight1 = 2.3
+    loss_weight2 = 2.5
+   ....
+    loss_weight32 = 4
+    loss_weight33 = 12
+    loss_weight34 = 4
+    loss_weight35 = 4
+    loss_weight_ignore = 0
+
+    not_ignore_mask =   tf.to_float(tf.equal(scaled_labels, 0)) * loss_weight0 + \
+                        tf.to_float(tf.equal(scaled_labels, 1)) * loss_weight1 + \
+                        ....
+                        tf.to_float(tf.equal(scaled_labels, 35)) * loss_weight35 + \
+                        tf.to_float(tf.equal(scaled_labels, ignore_label)) * loss_weight_ignore
+```
+
 ### 6.4 从头开始进行训练
 > 从头开始训练时，你需要设置较大的学习率，来保证网络参数能以较快的速度进行调整．
 ```python
