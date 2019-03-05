@@ -132,9 +132,7 @@ python deeplab/train.py \
 #form /datasets/apollo/exp/train_on_train_set/
 tensorboar --log_dir=./datasets/apollo/exp/train_on_train_set
 ```
-<br>
-
-### 6.５ 在提供的预训练模型上fur-training
+### 6.5 在提供的预训练模型上fur-training
 如果你下载了我提供的预训练模型，那么你只需要将＇tf_initial_checkpoint＇的位置改为，已经下载的模型的地址．将base_learning＿rate设置为.001并将训练步数改小．
 ```python
 CUDA_VISIBLE_DEVICES=0 \
