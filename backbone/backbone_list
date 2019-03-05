@@ -1,0 +1,6 @@
+|----backbone
+	|----deeolabv3_cityscapes_train
+		|----frozen_inference_graph.pb
+		|----model.ckpt.data-00000-of-00001
+		|----model.ckpt.index
+	|----backbone_list

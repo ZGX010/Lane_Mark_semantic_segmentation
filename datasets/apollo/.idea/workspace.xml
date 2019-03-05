@@ -1,0 +1,758 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BookmarkManager">
+    <bookmark url="file://$PROJECT_DIR$/../../../slim/classify_image_inception_v3.py" line="127" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="b1759f78-0e58-42b0-bc67-42643e618574" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/build_data.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lane_segmentation/color2Labelimg.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lane_segmentation/color2TrainIdLabelImgs.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lane_segmentation/helpers/color2Labelimg.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lane_segmentation/helpers/color2TrainIdLabelImgs.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lane_segmentation/helpers/test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../adversarial_logit_pairing/datasets/dataset_factory.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../../adversarial_logit_pairing/datasets/dataset_factory.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../common.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../common.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lane_segmentation/thirdParty/cityscapesScripts/cityscapesscripts/evaluation/evalPixelLevelSemanticLabeling.py" beforeDir="false" afterPath="$PROJECT_DIR$/lane_segmentation/thirdParty/cityscapesScripts/cityscapesscripts/evaluation/evalPixelLevelSemanticLabeling.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../segmentation_dataset.py" beforeDir="false" afterPath="$PROJECT_DIR$/../segmentation_dataset.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../export_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../export_model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../local_test_mobilenetv2.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../../local_test_mobilenetv2.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../train.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../train.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../utils/get_dataset_colormap.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../utils/get_dataset_colormap.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../utils/train_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../utils/train_utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../vis.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../vis.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../slim/datasets/dataset_factory.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../../slim/datasets/dataset_factory.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../slim/datasets/download_and_convert_flowers.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../../slim/datasets/download_and_convert_flowers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../slim/download_and_convert_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../../slim/download_and_convert_data.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../slim/eval_image_classifier.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../../slim/eval_image_classifier.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../slim/export_inference_graph.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../../slim/export_inference_graph.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../slim/train_image_classifier.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../../slim/train_image_classifier.py" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/apollo$lastotxt.coverage" NAME="lastotxt Coverage Results" MODIFIED="1547620474489" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$USER_HOME$/Desktop" />
+    <SUITE FILE_PATH="coverage/apollo$image_classes.coverage" NAME="image_classes Coverage Results" MODIFIED="1551252010443" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../../../slim" />
+    <SUITE FILE_PATH="coverage/apollo$Unnamed.coverage" NAME="Unnamed Coverage Results" MODIFIED="1550219818338" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/exp/train_on_train_set/vis_train_50000/segmentation_results" />
+    <SUITE FILE_PATH="coverage/apollo$color2TrainIdlabeling.coverage" NAME="color2TrainIdlabeling Coverage Results" MODIFIED="1547450544077" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lane_segmentation" />
+    <SUITE FILE_PATH="coverage/apollo$test_color2TrainIdlabeimg.coverage" NAME="test_color2TrainIdlabeimg Coverage Results" MODIFIED="1547454045545" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lane_segmentation/helpers" />
+    <SUITE FILE_PATH="coverage/apollo$blendimgtest.coverage" NAME="blendimgtest Coverage Results" MODIFIED="1550219729847" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/exp/train_on_train_set/vis_train_30000/segmentation_results" />
+  </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="876686209">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="16" />
+          <entry key="project.open.time.0" value="2" />
+          <entry key="project.open.time.11" value="1" />
+          <entry key="project.open.time.4" value="12" />
+          <entry key="project.open.time.5" value="11" />
+          <entry key="project.open.time.6" value="1" />
+          <entry key="project.open.time.7" value="3" />
+          <entry key="project.opened" value="30" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="jpg" value="1" />
+          <entry key="py" value="74" />
+          <entry key="txt" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="Image" value="1" />
+          <entry key="PLAIN_TEXT" value="1" />
+          <entry key="Python" value="74" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="py" value="9405" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="Python" value="9405" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>model</find>
+      <find>step</find>
+      <find>steps</find>
+      <find>dataset_s</find>
+      <find>max_num</find>
+      <find>learning rate</find>
+      <find>learning_rate_decay_t</find>
+      <find>opt</find>
+      <find>save</find>
+      <find>che</find>
+      <find>net</find>
+      <find>network</find>
+      <find>net_</find>
+      <find>nets_factory</find>
+      <find>learn</find>
+      <find>learning_rate</find>
+      <find>log</find>
+      <find>network_</find>
+      <find>INFO_FILE</find>
+      <find>path</find>
+      <find>InceptionV4/Logits/SpatialSque</find>
+      <find>print</find>
+      <find>input</find>
+      <find>Accuracy</find>
+      <find>_NUM_CLASSES</find>
+      <find>_NUM_SHARDS</find>
+      <find>run</find>
+      <find>3</find>
+      <find>size</find>
+      <find>128</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../.." />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/lane_segmentation/color2TrainIdLabelImgs.py" />
+        <option value="$PROJECT_DIR$/lane_segmentation/helpers/color2TrainIdLabelImgs.py" />
+        <option value="$PROJECT_DIR$/../../utils/test.py" />
+        <option value="$USER_HOME$/Desktop/lastotxt.py" />
+        <option value="$PROJECT_DIR$/../../vis.py" />
+        <option value="$PROJECT_DIR$/../../utils/get_dataset_colormap.py" />
+        <option value="$PROJECT_DIR$/lane_segmentation/color2Labelimg.py" />
+        <option value="$PROJECT_DIR$/lane_segmentation/evaluation/evalPixelLevelSemanticLabeling.py" />
+        <option value="$PROJECT_DIR$/../segmentation_dataset.py" />
+        <option value="$PROJECT_DIR$/build_apollo_data.py" />
+        <option value="$PROJECT_DIR$/exp/train_on_train_set/vis_train_19000/segmentation_results/blendimgtest.py" />
+        <option value="$PROJECT_DIR$/exp/train_on_train_set/vis_train_30000/segmentation_results/blendimgtest.py" />
+        <option value="$PROJECT_DIR$/exp/train_on_train_set/vis_train_50000/segmentation_results/blend_image.py" />
+        <option value="$PROJECT_DIR$/../../utils/train_utils.py" />
+        <option value="$PROJECT_DIR$/lane_segmentation/evaluation/evalPixelLevelSemanticLabeling_2.py" />
+        <option value="$PROJECT_DIR$/lane_segmentation/thirdParty/cityscapesScripts/cityscapesscripts/evaluation/evalPixelLevelSemanticLabeling.py" />
+        <option value="$PROJECT_DIR$/../../train.py" />
+        <option value="$PROJECT_DIR$/lane_segmentation/helpers/color2Labelimg.py" />
+        <option value="$USER_HOME$/Desktop/blendimgtest/blendimgtest.py" />
+        <option value="$PROJECT_DIR$/../../../slim/covert_mydata.py" />
+        <option value="$PROJECT_DIR$/../../../slim/datasets/download_and_convert_flowers.py" />
+        <option value="$PROJECT_DIR$/../../../slim/download_and_convert_data.py" />
+        <option value="$PROJECT_DIR$/../../../slim/datasets/covert_mydata.py" />
+        <option value="$PROJECT_DIR$/../../../slim/datasets/mydata.py" />
+        <option value="$PROJECT_DIR$/../../../slim/datasets/dataset_factory.py" />
+        <option value="$PROJECT_DIR$/../../export_model.py" />
+        <option value="$PROJECT_DIR$/../../../slim/train_image_classifier.py" />
+        <option value="$PROJECT_DIR$/../../../slim/predict.py" />
+        <option value="$PROJECT_DIR$/../../../slim/predict_v2.py" />
+        <option value="$PROJECT_DIR$/../../../slim/export_inference_graph.py" />
+        <option value="$USER_HOME$/Downloads/Deep-Learning-21-Examples-master/chapter_3/classify_image_inception_v3.py" />
+        <option value="$PROJECT_DIR$/../../../slim/eval_image_classifier.py" />
+        <option value="$PROJECT_DIR$/../../../slim/classify_image_inception_v3.py" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="367" />
+    <option name="y" value="130" />
+    <option name="width" value="1505" />
+    <option name="height" value="826" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="apollo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="apollo" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="apollo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="apollo" type="462c0819:PsiDirectoryNode" />
+              <item name="exp" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="apollo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="apollo" type="462c0819:PsiDirectoryNode" />
+              <item name="lane_segmentation" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="apollo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="apollo" type="462c0819:PsiDirectoryNode" />
+              <item name="lane_segmentation" type="462c0819:PsiDirectoryNode" />
+              <item name="helpers" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="SearchEverywhereHistoryKey" value=":&#9;ACTION&#9;bash.reportType&#10;*&#9;FILE&#9;file:///home/zgx010/TensorflowModels/models/research/deeplab/datasets/segmentation_dataset.py" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../slim/predict.py" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Python.image_classes">
+    <configuration name="Unnamed" type="PythonConfigurationType" factoryName="Python">
+      <module name="apollo" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="/usr/bin/python2.7" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/exp/train_on_train_set/vis_train_50000/segmentation_results" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/exp/train_on_train_set/vis_train_50000/segmentation_results/blend_image.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="blendimgtest" type="PythonConfigurationType" factoryName="Python">
+      <module name="apollo" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="/usr/bin/python2.7" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/exp/train_on_train_set/vis_train_30000/segmentation_results" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/exp/train_on_train_set/vis_train_30000/segmentation_results/blendimgtest.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="color2TrainIdlabeling" type="PythonConfigurationType" factoryName="Python">
+      <module name="apollo" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="/usr/bin/python2.7" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/lane_segmentation" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/lane_segmentation/color2TrainIdLabelImgs.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="image_classes" type="PythonConfigurationType" factoryName="Python">
+      <module name="apollo" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="/usr/bin/python2.7" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../../../slim" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../../../slim/predict.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="lastotxt" type="PythonConfigurationType" factoryName="Python">
+      <module name="apollo" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="/usr/bin/python2.7" />
+      <option name="WORKING_DIRECTORY" value="$USER_HOME$/Desktop" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$USER_HOME$/Desktop/lastotxt.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Python.lastotxt" />
+      <item itemvalue="Python.color2TrainIdlabeling" />
+      <item itemvalue="Python.blendimgtest" />
+      <item itemvalue="Python.Unnamed" />
+      <item itemvalue="Python.image_classes" />
+    </list>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b1759f78-0e58-42b0-bc67-42643e618574" name="Default Changelist" comment="" />
+      <created>1545962389129</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1545962389129</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="367" y="130" width="1505" height="826" extended-state="0" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26593557" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.18821838" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.10774059" />
+      <window_info anchor="bottom" id="Python Console" order="12" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="SciView" order="3" />
+      <window_info anchor="right" id="Database" order="4" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/../cityscapes/cityscapesscripts/helpers/labels.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-855" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../utils/test.py" />
+    <entry file="file://$USER_HOME$/Desktop/test.txt" />
+    <entry file="file://$USER_HOME$/Desktop/lastotxt.py" />
+    <entry file="file://$PROJECT_DIR$/lane_segmentation/color2TrainIdLabelImgs.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="735">
+          <caret line="52" column="78" selection-start-line="52" selection-start-column="75" selection-end-line="52" selection-end-column="78" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../model.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="53" selection-start-line="53" selection-end-line="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../train_back.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" selection-start-line="19" selection-end-line="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/blendimgtest/1.jpg" />
+    <entry file="file://$PROJECT_DIR$/lane_segmentation/thirdParty/cityscapesscripts/helpers/labels.py" />
+    <entry file="file://$PROJECT_DIR$/lane_segmentation/evaluation/evalPixelLevelSemanticLabeling.py" />
+    <entry file="file://$PROJECT_DIR$/../../utils/get_dataset_colormap.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="874">
+          <caret line="294" column="22" selection-start-line="294" selection-start-column="22" selection-end-line="294" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/exp/train_on_train_set/vis_train_19000/segmentation_results/blendimgtest.py" />
+    <entry file="file://$PROJECT_DIR$/build_data.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lane_segmentation/color2Labelimg.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="990">
+          <caret line="73" column="91" selection-start-line="73" selection-start-column="91" selection-end-line="73" selection-end-column="91" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/exp/train_on_train_set/vis_train_30000/segmentation_results/blendimgtest.py" />
+    <entry file="file://$PROJECT_DIR$/exp/train_on_train_set/vis_train_50000/segmentation_results/blend_image.py" />
+    <entry file="file://$PROJECT_DIR$/../../common.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../utils/input_generator.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1620">
+          <caret line="27" selection-start-line="27" selection-end-line="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../input_preprocess.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1739" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build_apollo_data.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="975">
+          <caret line="65" column="10" selection-start-line="65" selection-start-column="10" selection-end-line="65" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../vis.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4290">
+          <caret line="295" column="24" selection-start-line="295" selection-start-column="24" selection-end-line="295" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../utils/save_annotation.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" selection-start-line="20" selection-end-line="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lane_segmentation/helpers/color2Labelimg.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1665">
+          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lane_segmentation/helpers/color2TrainIdLabelImgs.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="126" column="20" selection-start-line="87" selection-start-column="4" selection-end-line="126" selection-end-column="20" />
+          <folding>
+            <element signature="e#721#785#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/blendimgtest/blendimgtest.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="57" column="59" selection-start-line="57" selection-start-column="59" selection-end-line="57" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../eval.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="32" selection-start-line="32" selection-end-line="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lane_segmentation/thirdParty/cityscapesScripts/cityscapesscripts/evaluation/evalPixelLevelSemanticLabeling.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="645">
+          <caret line="178" column="20" selection-start-line="178" selection-start-column="16" selection-end-line="178" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lane_segmentation/evaluation/evalPixelLevelSemanticLabeling_2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="9" column="32" selection-start-line="9" selection-start-column="32" selection-end-line="9" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../slim/covert_mydata.py" />
+    <entry file="file://$PROJECT_DIR$/../segmentation_dataset.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1275">
+          <caret line="87" selection-start-line="87" selection-end-line="87" />
+          <folding>
+            <element signature="e#2147#2165#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../train.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1335">
+          <caret line="96" selection-start-line="96" selection-end-line="96" />
+          <folding>
+            <element signature="e#777#787#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../utils/train_utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1080">
+          <caret line="75" column="20" selection-start-line="75" selection-start-column="20" selection-end-line="75" selection-end-column="20" />
+          <folding>
+            <element signature="e#727#737#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../slim/download_and_convert_data.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="130">
+          <caret line="43" selection-start-line="43" selection-end-line="43" />
+          <folding>
+            <element signature="e#1062#1100#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../export_model.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="103" column="29" selection-start-line="103" selection-start-column="29" selection-end-line="103" selection-end-column="29" />
+          <folding>
+            <element signature="e#745#754#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../slim/nets/nets_factory.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="97" column="48" selection-start-line="97" selection-start-column="48" selection-end-line="97" selection-end-column="48" />
+          <folding>
+            <element signature="e#740#778#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Downloads/Deep-Learning-21-Examples-master/chapter_3/classify_image_inception_v3.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="89">
+          <caret line="95" column="63" selection-start-line="95" selection-start-column="63" selection-end-line="95" selection-end-column="63" />
+          <folding>
+            <element signature="e#690#728#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../slim/export_inference_graph.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="287">
+          <caret line="119" column="27" selection-start-line="119" selection-start-column="27" selection-end-line="119" selection-end-column="27" />
+          <folding>
+            <element signature="e#2272#2310#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../slim/nets/inception_v3.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3167">
+          <caret line="569" column="44" selection-start-line="569" selection-start-column="44" selection-end-line="569" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../slim/export_inference_graph_test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-28">
+          <caret line="11" column="30" selection-start-line="11" selection-start-column="30" selection-end-line="11" selection-end-column="30" />
+          <folding>
+            <element signature="e#727#765#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../slim/eval_image_classifier.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-208">
+          <caret line="34" column="31" selection-start-line="34" selection-start-column="31" selection-end-line="34" selection-end-column="31" />
+          <folding>
+            <element signature="e#764#802#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../slim/predict.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-885">
+          <caret line="22" selection-start-line="22" selection-end-line="22" />
+          <folding>
+            <element signature="e#20#58#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../slim/datasets/covert_mydata.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="333">
+          <caret line="92" column="17" selection-start-line="92" selection-start-column="12" selection-end-line="92" selection-end-column="17" />
+          <folding>
+            <element signature="e#27#50#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../slim/datasets/dataset_factory.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="78">
+          <caret line="36" column="61" selection-start-line="26" selection-end-line="32" selection-end-column="1" />
+          <folding>
+            <element signature="e#768#806#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../slim/datasets/mydata.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="18" selection-start-line="18" selection-end-line="18" selection-end-column="16" />
+          <folding>
+            <element signature="e#28#37#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../slim/datasets/dataset_utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-780">
+          <caret line="26" column="7" selection-start-line="26" selection-end-line="26" selection-end-column="30" />
+          <folding>
+            <element signature="e#755#793#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../slim/datasets/download_and_convert_flowers.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2373">
+          <caret line="176" column="19" selection-start-line="176" selection-start-column="8" selection-end-line="176" selection-end-column="19" />
+          <folding>
+            <element signature="e#1112#1150#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../slim/predict_v2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="55" column="66" selection-start-line="55" selection-start-column="16" selection-end-line="55" selection-end-column="66" />
+          <folding>
+            <element signature="e#16#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../slim/classify_image_inception_v3.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="91" column="5" lean-forward="true" selection-start-line="91" selection-start-column="5" selection-end-line="91" selection-end-column="5" />
+          <folding>
+            <element signature="e#690#728#0" expanded="true" />
+            <marker date="1551521357942" expanded="true" signature="995:997" ph="..." />
+            <marker date="1551521357942" expanded="true" signature="2747:2748" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../slim/freeze_graph.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="700">
+          <caret line="112" column="13" selection-start-line="112" selection-start-column="13" selection-end-line="112" selection-end-column="13" />
+          <folding>
+            <element signature="e#1586#1624#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../slim/train_image_classifier.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="203" column="21" selection-start-line="203" selection-start-column="17" selection-end-line="203" selection-end-column="21" />
+          <folding>
+            <element signature="e#759#797#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../slim/nets/inception_v4.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="297" column="52" selection-start-line="297" selection-start-column="49" selection-end-line="297" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
