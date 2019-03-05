@@ -42,6 +42,8 @@ python deeplab/model_test.py
 <br>
 
 ## 5 处理训练数据为ＴＦＲecord格式
+<br>
+
 ### 5.1 彩色标注数据转换为灰度数据
 由于训练数据大小约150ＧＢ超出上传尺寸．所以我将训练数据单独放置，你可以按照/dataset/apollo文件夹中的readme操作获得训练数据．
 从apollo上下载的label数据无法直接作为训练数据，虽然对方申明自己是按照cityspace数据建立的．label图片采用了彩色数据而没有使用灰度图来表示图像像素的类别，因此我提供了一个转换脚本color2TrainId.py将彩色图片按＇/datasets/apollo/lane_segmentation/helpers/laneMarkDetection.py
@@ -51,11 +53,12 @@ python deeplab/model_test.py
 python color2TrainIdLabelImgs.py
 ```
 <br>
+
 color2TrainIdLabelImgs.py中使用了多线程默认线程数是10，你可以在脚本中修改线程数以适用于你的计算机．脚本运行结束后会在Ｌabeimg文件夹下生成训练用的标注数据．
 <br>
 
 ### 5.2 将百度数据打包为ＴＦＲecord
-这个脚本修改自build_cityscapes.py文件
+这个脚本修改自build_cityscapes.py文件,它将从colorimg/labelimg文件夹中读取数据并打包成ＴＦＲecord．需要注意的是只有经过上一步转换后的图像才能进行打包不然会出现错误．
 ```python
 # from /datasets/apollo/
 python build_apollo_data.py
@@ -65,12 +68,14 @@ python build_apollo_data.py
 
 ## 6 训练模型
 ### 6.1 下载cityspaces的预训练模型
+cityspaecs数据集虽然没有标线这个类别，但是它却是在城市场景中训练的模型，与本项目有一定的交集，因此我使用了它提供的预训练模型进行训练，并在这个基础上得到了较好的结果．
 download.tensorflow.org/models/deeplabv3_cityscapes_train_2018_02_06.tar.gz
 ### 6.2 下载本项目提供的预训练模型
+如果你的时间比较紧张，或者你需要在较短的时间内看到结果，你可以使用
 <br>
-<br>
-
-### 7 进行训练
+### 6.3 非均衡样本的设置
+### 6.4 从头开始进行训练
+> 从头开始训练时，你需要设置较大的学习率，来保证网络参数能以较快的速度进行调整．
 ```python
 CUDA_VISIBLE_DEVICES=0 \
 python deeplab/train.py \
@@ -98,9 +103,12 @@ python deeplab/train.py \
 --dataset_dir='/home/zgx010/TensorflowModels/models/research/deeplab/datasets/apollo/tfrecord'
 ```
 <br>
+
+### 6.５ 在提供的预训练模型上fur-training
+
 <br>
 
-## 8 训练结果可视化
+## 7 训练结果可视化
 ```python
 CUDA_VISIBLE_DEVICES=1 \
 python deeplab/vis.py \
@@ -121,9 +129,9 @@ python deeplab/vis.py \
 --dataset_dir='/home/zgx010/TensorflowModels/models/research/deeplab/datasets/apollo/tfrecord'
 ```
 <br>
+<br>
 
-
-## 9 评估模型
+## 8 评估模型
 ```python
 CUDA_VISIBLE_DEVICES=0 \
 python deeplab/eval.py \
@@ -143,8 +151,9 @@ python deeplab/eval.py \
 --dataset_dir='/home/zgx010/TensorflowModels/models/research/deeplab/datasets/apollo/tfrecord'
 ```
 <br>
+<br>
 
-## 10 导出模型
+## 9 导出模型
 ```python
 python deeplab/export_model.py \
   --logtostderr \
