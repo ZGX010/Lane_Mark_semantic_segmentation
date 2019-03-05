@@ -1,8 +1,11 @@
 # Lane_mark_semantic-segmentation
 <br>
 ## １ 项目功能：
-本项目是deeplab模型在百度apollo路面标线数据上训练来的．解决了样本训练样本不均衡以及训练数据标注结果无法直接使用的问题．在本项目中我提供了一个支持多线程的彩色标注转灰度图的脚本，并提供了一个将可视化结果合并为视频文件到的脚本．同时还提供已经打包好的ＴＦＲecord数据以及为解决样本不均衡问题设置的类别权重作为参考．
+本项目是deeplab模型在百度apollo路面标线数据上训练来的．解决了样本训练样本不均衡以及训练数据标注结果无法直接使用的问题．在本项目中我提供了一个支持多线程的彩色标注转灰度图的脚本，并提供了一个将可视化结果合并为视频文件到的脚本．同时还提供已经打包好的ＴＦＲecord数据以及为解决样本不均衡问题设置的类别权重作为参考．<br>
+
 下面的ＧＩＦ为网络预测结果
+<br>
+
 <div align=center><img width="426" height="240" src="https://github.com/ZGX010/Lane_Mark_semantic_segmentation/blob/master/doc/lane_mark.gif"/></div>
 <br>
 
@@ -40,7 +43,8 @@ python deeplab/model_test.py
 ### 5.1 彩色标注数据转换为灰度数据
 由于训练数据大小约150ＧＢ超出上传尺寸．所以我将训练数据单独放置，你可以按照/dataset/apollo文件夹中的readme操作获得训练数据．
 从apollo上下载的label数据无法直接作为训练数据，虽然对方申明自己是按照cityspace数据建立的．label图片采用了彩色数据而没有使用灰度图来表示图像像素的类别，因此我提供了一个转换脚本color2TrainId.py将彩色图片按＇/datasets/apollo/lane_segmentation/helpers/laneMarkDetection.py
-＇中的定义转换为三通道一致的图片，像素数值与训练ＩＤ相对应
+＇中的定义转换为三通道一致的图片，像素数值与训练ＩＤ相对应 
+<br>
 ```python
 # from /datasets/apollo/lane_segmentation/
 python color2TrainIdLabelImgs.py
@@ -61,6 +65,8 @@ cityspaecs数据集虽然没有标线这个类别，但是它却是在城市场�
 download.tensorflow.org/models/deeplabv3_cityscapes_train_2018_02_06.tar.gz
 ### 6.2 下载本项目提供的预训练模型
 如果你的时间比较紧张，或者你需要在较短的时间内看到结果，你可以使用我提供的预训练模型，直接在这个基础上进行训练，相信这样模型会很快收敛．
+<br>
+请按照'/datasets/apollo/exp'文件中的readme获取下载链接. 
 <br>
 ### 6.3 非均衡样本的设置
 在'/utils/train_utils.py'脚本中对loss的计算进行了定义，你可以根据自己的需要对权重进行编辑，将比较重要的对象设置较高权重．　<br>
@@ -85,7 +91,15 @@ scaled_labels = tf.reshape(scaled_labels, shape=[-1])
 ```
 
 ### 6.4 从头开始进行训练
-> 从头开始训练时，你需要设置较大的学习率，来保证网络参数能以较快的速度进行调整．
+> 从头开始训练时，你需要设置较大的学习率，来保证在训练初期网络参数能以较快的速度进行调整．虽然deeplab建议的学习率为.007但是考虑到我们使用的预训练模型与本项目有交叉所以我建议将学习率设置在.005以此来减少学习时间．
+<br>
+> 其中＇model_variant＇除了xception_65外还有许多其他的模型可以选择．
+<br>
+> ＇atrous_rates＇设定了空洞捐积大小，如果你有更大的ＧＰＵ内存可以设定为＇8/16/32＇,＇out_put_stride=8＇，这样做可以使网络获得更大的感受野.
+<br>
+> 'train_crop_size'需要设置为4的倍数加１，并且如果想要获得较好的结果，至少需要保证该参数在325以上．
+<br>
+
 ```python
 CUDA_VISIBLE_DEVICES=0 \
 python deeplab/train.py \
@@ -111,6 +125,13 @@ python deeplab/train.py \
 --tf_initial_checkpoint='/home/zgx010/TensorflowModels/models/research/deeplab/backbone/deeplabv3_cityscapes_train/model.ckpt' \
 --train_logdir='/home/zgx010/TensorflowModels/models/research/deeplab/datasets/apollo/exp/train_on_train_set/train_200000' \
 --dataset_dir='/home/zgx010/TensorflowModels/models/research/deeplab/datasets/apollo/tfrecord'
+```
+<br>
+
+> 训练程中可以使用tensorboard观察和对比． 
+```python
+#form /datasets/apollo/exp/train_on_train_set/
+tensorboar --log_dir=./datasets/apollo/exp/train_on_train_set
 ```
 <br>
 
