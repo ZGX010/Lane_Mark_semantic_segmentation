@@ -37,8 +37,6 @@ python deeplab/model_test.py
 <br>
 
 ## 5 处理训练数据为ＴＦＲecord格式
-<br>
-
 ### 5.1 彩色标注数据转换为灰度数据
 由于训练数据大小约150ＧＢ超出上传尺寸．所以我将训练数据单独放置，你可以按照/dataset/apollo文件夹中的readme操作获得训练数据．
 从apollo上下载的label数据无法直接作为训练数据，虽然对方申明自己是按照cityspace数据建立的．label图片采用了彩色数据而没有使用灰度图来表示图像像素的类别，因此我提供了一个转换脚本color2TrainId.py将彩色图片按＇/datasets/apollo/lane_segmentation/helpers/laneMarkDetection.py
@@ -49,7 +47,6 @@ python color2TrainIdLabelImgs.py
 ```
 color2TrainIdLabelImgs.py中使用了多线程默认线程数是10，你可以在脚本中修改线程数以适用于你的计算机．脚本运行结束后会在Ｌabeimg文件夹下生成训练用的标注数据．
 <br>
-
 ### 5.2 将apollo数据打包为ＴＦＲecord
 这个脚本修改自build_cityscapes.py文件,它将从colorimg/labelimg文件夹中读取数据并打包成ＴＦＲecord．需要注意的是只有经过上一步转换后的图像才能进行打包不然会出现错误．
 ```python
