@@ -1,5 +1,6 @@
 # Lane_mark_semantic-segmentation
 <br>
+
 ## １ 项目功能：
 本项目是deeplab模型在百度apollo路面标线数据上训练来的．解决了样本训练样本不均衡以及训练数据标注结果无法直接使用的问题．在本项目中我提供了一个支持多线程的彩色标注转灰度图的脚本，并提供了一个将可视化结果合并为视频文件到的脚本．同时还提供已经打包好的ＴＦＲecord数据以及为解决样本不均衡问题设置的类别权重作为参考．<br>
 
@@ -91,15 +92,13 @@ scaled_labels = tf.reshape(scaled_labels, shape=[-1])
 ```
 
 ### 6.4 从头开始进行训练
-> 从头开始训练时，你需要设置较大的学习率，来保证在训练初期网络参数能以较快的速度进行调整．虽然deeplab建议的学习率为.007但是考虑到我们使用的预训练模型与本项目有交叉所以我建议将学习率设置在.005以此来减少学习时间．
-<br>
-> 其中＇model_variant＇除了xception_65外还有许多其他的模型可以选择．
-<br>
-> ＇atrous_rates＇设定了空洞捐积大小，如果你有更大的ＧＰＵ内存可以设定为＇8/16/32＇,＇out_put_stride=8＇，这样做可以使网络获得更大的感受野.
-<br>
-> 'train_crop_size'需要设置为4的倍数加１，并且如果想要获得较好的结果，至少需要保证该参数在325以上．
-<br>
+> * 从头开始训练时，你需要设置较大的学习率，来保证在训练初期网络参数能以较快的速度进行调整．虽然deeplab建议的学习率为.007但是考虑到我们使用的预训练模型与本项目有交叉所以我建议将学习率设置在.005以此来减少学习时间． <br>
 
+> * 其中＇model_variant＇除了xception_65外还有许多其他的模型可以选择． <br>
+
+> * ＇atrous_rates＇设定了空洞捐积大小，如果你有更大的ＧＰＵ内存可以设定为＇8/16/32＇,＇out_put_stride=8＇，这样做可以使网络获得更大的感受野. <br>
+
+> * 'train_crop_size'需要设置为4的倍数加１，并且如果想要获得较好的结果，至少需要保证该参数在325以上． <br>
 ```python
 CUDA_VISIBLE_DEVICES=0 \
 python deeplab/train.py \
@@ -136,7 +135,33 @@ tensorboar --log_dir=./datasets/apollo/exp/train_on_train_set
 <br>
 
 ### 6.５ 在提供的预训练模型上fur-training
-
+如果你下载了我提供的预训练模型，那么你只需要将＇tf_initial_checkpoint＇的位置改为，已经下载的模型的地址．将base_learning＿rate设置为.001并将训练步数改小．
+```python
+CUDA_VISIBLE_DEVICES=0 \
+python deeplab/train.py \
+--logtostderr \
+--num_clones=1 \
+--task=0 \
+--learing_policy=poly \
+--base_learning_rate=.001 \
+--learing_rate_decay_factor=0.1\
+--learing_rate_decay_step=2000 \
+--training_bumber_of_steps=10000 \
+--train_spilt="train" \
+--model_variant="xception_65" \
+--atrous_rates=6 \
+--atrous_rates=12 \
+--atrous_rates=18 \
+--output_stride=16 \
+--decoder_output_stride=4 \
+--train_crop_size=341 \
+--train_crop_size=341 \
+--train_bath_size=2 \
+--dataset="apollo" \
+--tf_initial_checkpoint='/home/zgx010/TensorflowModels/models/research/deeplab/backbone/deeplabv3_cityscapes_train/model.ckpt' \
+--train_logdir='/home/zgx010/TensorflowModels/models/research/deeplab/datasets/apollo/exp/train_on_train_set/train_200000' \
+--dataset_dir='/home/zgx010/TensorflowModels/models/research/deeplab/datasets/apollo/tfrecord'
+```
 <br>
 
 ## 7 训练结果可视化
