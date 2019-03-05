@@ -1,10 +1,14 @@
 # Lane_mark_semantic-segmentation
 ## 项目功能：
+本项目是deeplab模型在百度apollo路面标线数据上训练来的．解决了样本训练样本不均衡以及训练数据标注结果无法直接使用的问题．在本项目中我提供了一个支持多线程的彩色标注转灰度图的脚本，并提供了一个将可视化结果合并为视频文件到的脚本．同时还提供已经打包好的ＴＦＲecord数据以及为解决样本不均衡问题设置的类别权重作为参考．
+下面的ＧＩＦ为网络预测结果
 <div align=center><img width="426" height="240" src="https://github.com/ZGX010/Lane_Mark_semantic_segmentation/blob/master/doc/lane_mark.gif"/></div>
 <br>
 
-## DeeplabV3 model：
+## DeeplabV3 model and apollo-lane-mark-dataset
 <br>
+
+## 检测训练环境
 
 ## 处理训练数据为ＴＦＲecord格式
 <br>
