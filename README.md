@@ -71,9 +71,10 @@ If you need to see the results in a short period of time, you can use the pre-tr
 <br>
 Please download the pre-training model by following the method in 'readme' in the '/datasets/apollo/exp' folder.  
 <br>
-### 6.3 非均衡样本的设置
-在'/utils/train_utils.py'脚本中对loss的计算进行了定义，你可以根据自己的需要对权重进行编辑，将比较重要的对象设置较高权重．　<br>
-如果你希望能够通过计算得到一个确切的数字，那么你可以参考E-net中的计算方法，但是这种方法仅仅只考虑了数据的分布并没考虑对象间的差异． <br>
+### 6.3 Unbalanced data settings
+The calculation of loss is defined in the '/utils/train_utils.py' script. You can edit the weights according to your needs and set higher weights for more important objects.　
+<br>
+If you want to get an exact number by calculation, then you can refer to the calculation method in E-net, although that method only considers the distribution of the data and does not consider the difficulty of learning objects. <br>
 ```python
 scaled_labels = tf.reshape(scaled_labels, shape=[-1])
     loss_weight0 = 1.5
