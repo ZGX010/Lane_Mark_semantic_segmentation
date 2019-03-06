@@ -94,12 +94,15 @@ scaled_labels = tf.reshape(scaled_labels, shape=[-1])
                         tf.to_float(tf.equal(scaled_labels, ignore_label)) * loss_weight_ignore
 ```
 
-### 6.4 从头开始进行训练
-> * 从头开始训练时，你需要设置较大的学习率，来保证在训练初期网络参数能以较快的速度进行调整．虽然deeplab建议的学习率为.007但是考虑到我们使用的预训练模型与本项目有交叉所以我建议将学习率设置在.005以此来减少学习时间． <br>
+### 6.4 Training network
+> * If you want to start training from the beginning, then the learning rate needs to be set larger to ensure that the network parameters can be adjusted at a faster speed in the early stages of training. Since the pre-training model we used is similar to this project scenario, it is recommended to set the learning rate to be '.005'. 
+<br>
 
-> * 其中＇model_variant＇除了xception_65外还有许多其他的模型可以选择． <br>
+> * The 'model_variant' parameter can also choose many other models.
+<br>
 
-> * ＇atrous_rates＇设定了空洞捐积大小，如果你有更大的ＧＰＵ内存可以设定为＇8/16/32＇,＇out_put_stride=8＇，这样做可以使网络获得更大的感受野. <br>
+> * Parameter ＇atrous_rates＇ sets the atrous convolution size. If you have larger GPU memory, you can set it to '8/16/32' and 'out_put_stride=8'. This will make the network get more receptive field. 
+<br>
 
 > * 'train_crop_size'需要设置为4的倍数加１，并且如果想要获得较好的结果，至少需要保证该参数在325以上． <br>
 ```python
