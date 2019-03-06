@@ -50,19 +50,21 @@ The label_image data downloaded directly from apollo cannot be used as training 
 # from /datasets/apollo/lane_segmentation/
 python color2TrainIdLabelImgs.py
 ```
-color2TrainIdLabelImgs.py中使用了多线程默认线程数是10，你可以在脚本中修改线程数以适用于你的计算机．脚本运行结束后会在Ｌabeimg文件夹下生成训练用的标注数据．
+The default number of threads for multithreading in the 'color2TrainIdLabelImgs.py' is 10. You can modify the number of threads in the script according to your cpu. After the script finishes running, the annotation image for training will be generated under the labeimg folder.
 <br>
-### 5.2 将apollo数据打包为ＴＦＲecord
-这个脚本修改自build_cityscapes.py文件,它将从colorimg/labelimg文件夹中读取数据并打包成ＴＦＲecord．需要注意的是只有经过上一步转换后的图像才能进行打包不然会出现错误．
+
+### 5.2 Package data as TFRecord
+The script 'build_apollo.py' is modified from 'build_cityscapes.py'. The script will read the images from the '/colorimg' and ‘/labelimg' folders and package them into TFRecord. It should be noted that only the image after the 'color2trainID.py' conversion can be packaged. <br>
+
 ```python
 # from /datasets/apollo/
 python build_apollo_data.py
 ```
 <br>
 
-## 6 训练模型
-### 6.1 下载cityspaces的预训练模型
-cityspaecs数据集虽然没有标线这个类别，但是它却是在城市场景中训练的模型，与本项目有一定的交集，因此我使用了它提供的预训练模型进行训练，并在这个基础上得到了较好的结果．
+## 6 Training model
+### 6.1 Download the pre-training model from cityspaces
+The cityspaecs dataset does not have road markings, but it is trained in a similar urban scene to the project, so I used the pre-training model provided by it to get better results. <br>
 download.tensorflow.org/models/deeplabv3_cityscapes_train_2018_02_06.tar.gz
 ### 6.2 下载本项目提供的预训练模型
 如果你的时间比较紧张，或者你需要在较短的时间内看到结果，你可以使用我提供的预训练模型，直接在这个基础上进行训练，相信这样模型会很快收敛．
