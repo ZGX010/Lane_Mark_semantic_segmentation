@@ -65,11 +65,11 @@ python build_apollo_data.py
 ## 6 Training model
 ### 6.1 Download the pre-training model from cityspaces
 The cityspaecs dataset does not have road markings, but it is trained in a similar urban scene to the project, so I used the pre-training model provided by it to get better results. <br>
-download.tensorflow.org/models/deeplabv3_cityscapes_train_2018_02_06.tar.gz
-### 6.2 下载本项目提供的预训练模型
-如果你的时间比较紧张，或者你需要在较短的时间内看到结果，你可以使用我提供的预训练模型，直接在这个基础上进行训练，相信这样模型会很快收敛．
+download link：download.tensorflow.org/models/deeplabv3_cityscapes_train_2018_02_06.tar.gz
+### 6.2 Download the pre-training model provided by this project
+If you need to see the results in a short period of time, you can use the pre-training model I provided to speed up model convergence.
 <br>
-请按照'/datasets/apollo/exp'文件中的readme获取下载链接. 
+Please download the pre-training model by following the method in 'readme' in the '/datasets/apollo/exp' folder.  
 <br>
 ### 6.3 非均衡样本的设置
 在'/utils/train_utils.py'脚本中对loss的计算进行了定义，你可以根据自己的需要对权重进行编辑，将比较重要的对象设置较高权重．　<br>
