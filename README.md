@@ -29,19 +29,19 @@ pip install opencv3
 <br>
 
 ## 4 Detecting the operating environment
-在research文件夹下运行检测命令并重启
+Run the test command in the research folder and restart <br>
 ```Python
 # From tensorflow/models/research/
 export PYTHONPATH=$PYTHONPATH:`pwd`:`pwd`/slim
 ```
-测试mode_test.py能否正常运行
+Test mode_test for normal operation. <br>
 ```python
 python deeplab/model_test.py
 ```
 <br>
 
-## 5 处理训练数据为ＴＦＲecord格式
-### 5.1 彩色标注数据转换为灰度数据
+## 5 Processing training images
+### 5.1 Convert color image to grayscale image
 I put about 150GB of training data separately, you can get the training data in the way of ‘readme’ in the '/dataset/apollo folder'．<br>
 
 The label_image data downloaded directly from apollo cannot be used as training data, although Baidu declares that these training data are created according to cityspace data. The label image uses RGB three channels to distinguish categories instead of grayscale images, so I provided a script ‘color2TrainId.py’ to convert RGB images into grayscale images as defined by the training ID in 'laneMarkDetection.py'. <br>
