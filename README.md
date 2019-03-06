@@ -1,19 +1,19 @@
 # Lane_mark_semantic-segmentation
 <br>
 
-## １ 项目功能：
-本项目是deeplab模型在百度apollo路面标线数据上训练来的．解决了样本训练样本不均衡以及训练数据标注结果无法直接使用的问题．在本项目中我提供了一个支持多线程的彩色标注转灰度图的脚本，并提供了一个将可视化结果合并为视频文件到的脚本．同时还提供已经打包好的ＴＦＲecord数据以及为解决样本不均衡问题设置的类别权重作为参考．<br>
+## １ Project Function：
+This project is the result of training the deeplab_V3 model on Baidu apollo road marking data. This project solves the problem of unbalanced training data by setting weights, and uses numpy and opencv to solve the problem that the annotation data cannot be directly used. In the project I provided a script that merges the visualization results into a video file. The project also provides the already packed TFRecord data and the weights set to resolve the imbalance of training data. <br>
 
-下面的ＧＩＦ为网络预测结果
+The following GIF is the network prediction result
 <br>
 
-<div align=center><img width="426" height="240" src="https://github.com/ZGX010/Lane_Mark_semantic_segmentation/blob/master/doc/lane_mark.gif"/></div>
+<div align=center><img width="400" height="220" src="https://github.com/ZGX010/Lane_Mark_semantic_segmentation/blob/master/doc/lane_mark.gif"/></div>
 <br>
 
 ## 2 DeeplabV3 model and apollo-lane-mark-dataset
 <br>
 
-## 3 运行环境
+## 3 Operating Environment
 * tensorflow >=1.6
 ```python
 pip install tensorflow-gpu
@@ -28,7 +28,7 @@ pip install opencv3
 ```
 <br>
 
-## 4 检测环境
+## 4 Detecting the operating environment
 在research文件夹下运行检测命令并重启
 ```Python
 # From tensorflow/models/research/
