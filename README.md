@@ -42,10 +42,10 @@ python deeplab/model_test.py
 
 ## 5 Processing training images
 ### 5.1 Convert color image to grayscale image
-I put about 150GB of training data separately, you can get the training data in the way of ‘readme’ in the '/dataset/apollo folder'．<br>
-
-The label_image data downloaded directly from apollo cannot be used as training data, although Baidu declares that these training data are created according to cityspace data. The label image uses RGB three channels to distinguish categories instead of grayscale images, so I provided a script ‘color2TrainId.py’ to convert RGB images into grayscale images as defined by the training ID in 'laneMarkDetection.py'. <br>
-
+I put about 150GB of training data separately, you can get the training data in the way of ‘readme’ in the '/dataset/apollo folder'． 
+<br>
+The label_image data downloaded directly from apollo cannot be used as training data, although Baidu declares that these training data are created according to cityspace data. The label image uses RGB three channels to distinguish categories instead of grayscale images, so I provided a script ‘color2TrainId.py’ to convert RGB images into grayscale images as defined by the training ID in 'laneMarkDetection.py'. 
+<br>
 ```python
 # from /datasets/apollo/lane_segmentation/
 python color2TrainIdLabelImgs.py
@@ -66,11 +66,10 @@ python build_apollo_data.py
 ### 6.1 Download the pre-training model from cityspaces
 The cityspaecs dataset does not have road markings, but it is trained in a similar urban scene to the project, so I used the pre-training model provided by it to get better results. <br>
 download link：download.tensorflow.org/models/deeplabv3_cityscapes_train_2018_02_06.tar.gz
+<br>
 ### 6.2 Download the pre-training model provided by this project
-If you need to see the results in a short period of time, you can use the pre-training model I provided to speed up model convergence.
-<br>
-Please download the pre-training model by following the method in 'readme' in the '/datasets/apollo/exp' folder.  
-<br>
+If you need to see the results in a short period of time, you can use the pre-training model I provided to speed up model convergence. <br>
+Please download the pre-training model by following the method in 'readme' in the '/datasets/apollo/exp' folder. <br>
 ### 6.3 Unbalanced data settings
 The calculation of loss is defined in the '/utils/train_utils.py' script. You can edit the weights according to your needs and set higher weights for more important objects.　
 <br>
@@ -106,7 +105,9 @@ scaled_labels = tf.reshape(scaled_labels, shape=[-1])
 
 > * The parameter 'train_crop_size' needs to be set to a multiple of 4 plus one. If you want better results, the parameter should be above 325. 
 <br>
-```python
+
+
+``` python
 CUDA_VISIBLE_DEVICES=0 \
 python deeplab/train.py \
 --logtostderr \
@@ -140,10 +141,12 @@ python deeplab/train.py \
 tensorboar --log_dir=./datasets/apollo/exp/train_on_train_set
 ```
 ### 6.5 Fur-training on pre-trained models
-> * If you downloaded the pre-training model, then you need to change the parameter 'tf_initial_checkpoint' to the address of the downloaded model. 
+> * If you downloaded the pre-training model, then you need to change the parameter 'tf_initial_checkpoint' to the address of the downloaded model. <br>
+> * Set base_learning_rate to '.001' and 'training_bumber_of_steps' to '10000'．　
 <br>
-> * 将base_learning＿rate设置为.001并将'training_bumber_of_steps'改为10000．
-```python
+
+
+``` python
 CUDA_VISIBLE_DEVICES=0 \
 python deeplab/train.py \
 --logtostderr \
@@ -171,7 +174,7 @@ python deeplab/train.py \
 ```
 <br>
 
-## 7 训练结果可视化
+## 7 Visualization of training results
 ```python
 CUDA_VISIBLE_DEVICES=1 \
 python deeplab/vis.py \
@@ -194,7 +197,7 @@ python deeplab/vis.py \
 <br>
 <br>
 
-## 8 评估模型
+## 8 Evaluation model
 ```python
 CUDA_VISIBLE_DEVICES=0 \
 python deeplab/eval.py \
@@ -216,7 +219,7 @@ python deeplab/eval.py \
 <br>
 <br>
 
-## 9 导出模型
+## 9 Export model
 ```python
 python deeplab/export_model.py \
   --logtostderr \
