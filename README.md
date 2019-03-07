@@ -104,7 +104,8 @@ scaled_labels = tf.reshape(scaled_labels, shape=[-1])
 > * Parameter ＇atrous_rates＇ sets the atrous convolution size. If you have larger GPU memory, you can set it to '8/16/32' and 'out_put_stride=8'. This will make the network get more receptive field. 
 <br>
 
-> * 'train_crop_size'需要设置为4的倍数加１，并且如果想要获得较好的结果，至少需要保证该参数在325以上． <br>
+> * The parameter 'train_crop_size' needs to be set to a multiple of 4 plus one. If you want better results, the parameter should be above 325. 
+<br>
 ```python
 CUDA_VISIBLE_DEVICES=0 \
 python deeplab/train.py \
@@ -133,13 +134,14 @@ python deeplab/train.py \
 ```
 <br>
 
-> 训练程中可以使用tensorboard观察和对比． 
+> You can use the tensorboard to observe and contrast during the training session. 
 ```python
 #form /datasets/apollo/exp/train_on_train_set/
 tensorboar --log_dir=./datasets/apollo/exp/train_on_train_set
 ```
-### 6.5 在提供的预训练模型上fur-training
-> * 如果你下载了我提供的预训练模型，那么你需要将＇tf_initial_checkpoint＇的位置改为已经下载的模型的地址． <br>
+### 6.5 Fur-training on pre-trained models
+> * If you downloaded the pre-training model, then you need to change the parameter 'tf_initial_checkpoint' to the address of the downloaded model. 
+<br>
 > * 将base_learning＿rate设置为.001并将'training_bumber_of_steps'改为10000．
 ```python
 CUDA_VISIBLE_DEVICES=0 \
