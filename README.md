@@ -1,7 +1,7 @@
 # Lane_mark_semantic-segmentation
 <br>
 
-## １ Project Function：
+## Project Function：
 This project is the result of training the deeplab_V3 model on Baidu apollo road marking data. This project solves the problem of unbalanced training data by setting weights, and uses numpy and opencv to solve the problem that the annotation data cannot be directly used. In the project I provided a script that merges the visualization results into a video file. The project also provides the already packed TFRecord data and the weights set to resolve the imbalance of training data. <br>
 
 The following GIF is the network prediction result
@@ -10,10 +10,10 @@ The following GIF is the network prediction result
 <div align=center><img width="400" height="220" src="https://github.com/ZGX010/Lane_Mark_semantic_segmentation/blob/master/doc/lane_mark.gif"/></div>
 <br>
 
-## 2 DeeplabV3 model and apollo-lane-mark-dataset
+## DeeplabV3 model and apollo-lane-mark-dataset
 <br>
 
-## 3 Operating Environment
+## Operating Environment
 * tensorflow >=1.6
 ```python
 pip install tensorflow-gpu
@@ -28,7 +28,7 @@ pip install opencv3
 ```
 <br>
 
-## 4 Detecting the operating environment
+## Detecting the operating environment
 Run the test command in the research folder and restart <br>
 ```Python
 # From tensorflow/models/research/
@@ -40,8 +40,8 @@ python deeplab/model_test.py
 ```
 <br>
 
-## 5 Processing training images
-### 5.1 Convert color image to grayscale image
+## Processing training images
+### Convert color image to grayscale image
 I put about 150GB of training data separately, you can get the training data in the way of ‘readme’ in the '/dataset/apollo folder'． 
 <br>
 The label_image data downloaded directly from apollo cannot be used as training data, although Baidu declares that these training data are created according to cityspace data. The label image uses RGB three channels to distinguish categories instead of grayscale images, so I provided a script ‘color2TrainId.py’ to convert RGB images into grayscale images as defined by the training ID in 'laneMarkDetection.py'. 
@@ -53,7 +53,7 @@ python color2TrainIdLabelImgs.py
 The default number of threads for multithreading in the 'color2TrainIdLabelImgs.py' is 10. You can modify the number of threads in the script according to your cpu. After the script finishes running, the annotation image for training will be generated under the labeimg folder.
 <br>
 
-### 5.2 Package data as TFRecord
+### Package data as TFRecord
 The script 'build_apollo.py' is modified from 'build_cityscapes.py'. The script will read the images from the '/colorimg' and ‘/labelimg' folders and package them into TFRecord. It should be noted that only the image after the 'color2trainID.py' conversion can be packaged. <br>
 
 ```python
@@ -62,15 +62,15 @@ python build_apollo_data.py
 ```
 <br>
 
-## 6 Training model
-### 6.1 Download the pre-training model from cityspaces
+## Training model
+### Download the pre-training model from cityspaces
 The cityspaecs dataset does not have road markings, but it is trained in a similar urban scene to the project, so I used the pre-training model provided by it to get better results. <br>
 download link：download.tensorflow.org/models/deeplabv3_cityscapes_train_2018_02_06.tar.gz
 <br>
-### 6.2 Download the pre-training model provided by this project
+### Download the pre-training model provided by this project
 If you need to see the results in a short period of time, you can use the pre-training model I provided to speed up model convergence. <br>
 Please download the pre-training model by following the method in 'readme' in the '/datasets/apollo/exp' folder. <br>
-### 6.3 Unbalanced data settings
+### Unbalanced data settings
 The calculation of loss is defined in the '/utils/train_utils.py' script. You can edit the weights according to your needs and set higher weights for more important objects.　
 <br>
 If you want to get an exact number by calculation, then you can refer to the calculation method in E-net, although that method only considers the distribution of the data and does not consider the difficulty of learning objects. <br>
@@ -93,7 +93,7 @@ scaled_labels = tf.reshape(scaled_labels, shape=[-1])
                         tf.to_float(tf.equal(scaled_labels, ignore_label)) * loss_weight_ignore
 ```
 
-### 6.4 Training network
+### Training network
 > * If you want to start training from the beginning, then the learning rate needs to be set larger to ensure that the network parameters can be adjusted at a faster speed in the early stages of training. Since the pre-training model we used is similar to this project scenario, it is recommended to set the learning rate to be '.005'. 
 <br>
 
@@ -140,7 +140,7 @@ python deeplab/train.py \
 #form /datasets/apollo/exp/train_on_train_set/
 tensorboar --log_dir=./datasets/apollo/exp/train_on_train_set
 ```
-### 6.5 Fur-training on pre-trained models
+### Fur-training on pre-trained models
 > * If you downloaded the pre-training model, then you need to change the parameter 'tf_initial_checkpoint' to the address of the downloaded model. <br>
 > * Set base_learning_rate to '.001' and 'training_bumber_of_steps' to '10000'．　
 <br>
@@ -174,7 +174,7 @@ python deeplab/train.py \
 ```
 <br>
 
-## 7 Visualization of training results
+## Visualization of training results
 ```python
 CUDA_VISIBLE_DEVICES=1 \
 python deeplab/vis.py \
@@ -197,7 +197,7 @@ python deeplab/vis.py \
 <br>
 <br>
 
-## 8 Evaluation model
+## Evaluation model
 ```python
 CUDA_VISIBLE_DEVICES=0 \
 python deeplab/eval.py \
@@ -219,7 +219,7 @@ python deeplab/eval.py \
 <br>
 <br>
 
-## 9 Export model
+## Export model
 ```python
 python deeplab/export_model.py \
   --logtostderr \
